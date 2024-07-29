@@ -1,0 +1,15 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 100px); /* 每列宽度为100px */
+  grid-template-rows: repeat(3, 100px);    /* 每行高度为100px */
+  gap: 0;                                   /* 格子之间无间隙 */
+}
+
+.square {
+  display: flex;
+  justify-content: center; /* 水平居中 */
+  align-items: center;     /* 垂直居中 */
+  border: 2px solid black; /* 边框样式 */
+  font-size: 24px;        /* 字体大小 */
+  font-weight: bold;      /* 字体加粗 */
+}
