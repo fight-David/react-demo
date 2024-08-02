@@ -1,13 +1,16 @@
 import Accordian from "./components/accordian/self";
 import ModalTest from "./components/custom-modal-popup/modal-text";
 import TabTest from "./components/custom-tabs/tab-text";
+import GithubProfileFinder from "./components/github-profile-finder";
 import ImageSlider from "./components/image-slider/self";
 import LightDarkMode from "./components/light-dark-mode";
 import LoadMoreData from "./components/load-more-data/self";
 import QRCodeGenerator from "./components/qr-code-generator";
 import RandomColor from "./components/random-color/self";
-import ScrollIndicator from "./components/scroll-indicator";
+import ScrollIndicator from "./components/scroll-indicator/self";
+import SearchAutocomplete from "./components/search-autocomplete-with-api";
 import StarRating from "./components/star-rating/self";
+import TicTacToe from "./components/tic-tact-toe/video";
 import TreeView from "./components/tree-view";
 import menus from './components/tree-view/data'
 
@@ -38,6 +41,12 @@ export default function TaskApp() {
 
     // <TabTest />
 
-    <ModalTest />
+    // <ModalTest />
+
+    // <GithubProfileFinder />
+
+    // <SearchAutocomplete />
+
+    <TicTacToe />
   )
 }
