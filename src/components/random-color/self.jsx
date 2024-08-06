@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 
 export default function RandomColor() {
-    const [colorType, setColorType] = useState('hex')
-    const [color, setColor] = useState('#000000')
+    const [typeOfColor, setTypeOfColor] = useState("hex");
+    const [color, setColor] = useState("#000000");
+
 
     function randomColorUtility(length) {
-        return Math.floor(Math.random * length)
+        return Math.floor(Math.random() * length);
     }
 
     function handleCreateRandomHexColor() {
@@ -20,18 +21,17 @@ export default function RandomColor() {
     }
 
     function handleCreateRandomRgbColor() {
-        const r = randomColorUtility(256)
-        const g = randomColorUtility(256)
-        const b = randomColorUtility(256)
+        const r = randomColorUtility(256);
+        const g = randomColorUtility(256);
+        const b = randomColorUtility(256);
 
-        setColor(`rgb(${r},${g},${b})`)
+        setColor(`rgb(${r},${g}, ${b})`);
     }
 
     useEffect(() => {
-        colorType === "hex"
-            ? handleCreateRandomHexColor()
-            : handleCreateRandomRgbColor()
-    }, [colorType])
+        if (typeOfColor === 'hex') handleCreateRandomHexColor()
+        else handleCreateRandomRgbColor()
+    }, [typeOfColor])
 
     return (
         <div style={{
@@ -39,13 +39,14 @@ export default function RandomColor() {
             height: "100vh",
             background: color,
         }}>
-            <button onClick={() => setColorType('hex')}>Create HEX Color</button>
-            <button onClick={() => setColorType('rgb')}>Create RGB Color</button>
+            <button onClick={() => setTypeOfColor('hex')}>Create HEX Color</button>
+            <button onClick={() => setTypeOfColor('rgb')}>Create RGB Color</button>
             <button onClick={
-                colorType === "hex"
+                typeOfColor === "hex"
                     ? handleCreateRandomHexColor
                     : handleCreateRandomRgbColor
-            }>Generate Random Color</button>
+            }> Generate Random Color</button>
+
             <div
                 style={{
                     display: "flex",
@@ -58,10 +59,9 @@ export default function RandomColor() {
                     gap: '20px'
                 }}
             >
-                <h3>{colorType === "rgb" ? "RGB Color" : "HEX Color"}</h3>
+                <h3>{typeOfColor === "rgb" ? "RGB Color" : "HEX Color"}</h3>
                 <h1>{color}</h1>
             </div>
         </div>
     )
-
 }
