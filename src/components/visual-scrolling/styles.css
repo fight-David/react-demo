@@ -1,0 +1,37 @@
+.visual-container {
+    width: 100vw;
+    height: 100vh;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    width: 100%;
+    min-height: 100vh;
+    line-height: 100vh;
+    background: rgba(0, 0, 0, .7);
+    color: #fff;
+    text-align: center;
+    font-size: 20vh;
+    /* 属性决定背景图像的位置是在视口内固定，还是随着包含它的区块滚动 */
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    background-size: cover;
+    background-position: center center;
+}
+
+.imgBox1 {
+    background-image: url('http://image.uc.cn/s/wemedia/s/upload/2020/b2a3c744f03975e021365c58be3d36f8.jpg');
+}
+
+.imgBox2 {
+    background-image: url('http://image.uc.cn/s/wemedia/s/upload/2020/2e2468388ae2b2acd4a1c749d9da8a45.jpg');
+}
+
+.imgBox3 {
+    background-image: url('http://image.uc.cn/s/wemedia/s/upload/2020/206a144160ba659e24c126ebef4c5f4d.jpg');
+}

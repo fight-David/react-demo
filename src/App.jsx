@@ -20,6 +20,7 @@ import UseOnclickOutsideTest from "./components/use-outside-click/test";
 import UseWindowResizeTest from "./components/use-window-resize/test";
 import ScrollToTopAndBottom from "./components/scroll-to-top-and-bottom";
 import ScrollToSection from "./components/scroll-to-top-and-bottom/scroll-to-section";
+import VisualScrolling from "./components/visual-scrolling/self";
 
 export default function TaskApp() {
   return (
@@ -68,6 +69,8 @@ export default function TaskApp() {
 
     // <ScrollToTopAndBottom />
 
-    <ScrollToSection />
+    // <ScrollToSection />
+
+    <VisualScrolling />
   )
 }

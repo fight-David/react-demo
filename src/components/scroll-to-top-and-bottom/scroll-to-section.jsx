@@ -1,7 +1,6 @@
 import { useRef } from "react"
 
 export default function ScrollToSection() {
-
   const ref = useRef()
 
   const data = [
@@ -47,9 +46,7 @@ export default function ScrollToSection() {
     },
   ];
 
-
   function handleScrollToSection() {
-
     const pos = ref.current.getBoundingClientRect().top
 
     window.scrollTo({
