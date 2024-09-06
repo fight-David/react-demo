@@ -12,6 +12,7 @@ export default function MenuItem({ item }) {
 
         setDisplayCurrentChildren({
             ...displayCurrentChildren,
+            // 不使用方括号，那么键名会被解释为字符串字面量,这就意味着 创建了一个 label：xxx 的 属性
             [label]: !displayCurrentChildren[label]
         })
     }

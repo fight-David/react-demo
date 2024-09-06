@@ -40,7 +40,7 @@ export default function TaskApp() {
 
     // <LoadMoreData />
 
-    // <TreeView menus={menus} />
+    <TreeView menus={menus} />
 
     // <QRCodeGenerator />
 
@@ -74,6 +74,6 @@ export default function TaskApp() {
 
     // <VisualScrolling />
 
-    <DataTablePaginated />
+    // <DataTablePaginated />
   )
 }
