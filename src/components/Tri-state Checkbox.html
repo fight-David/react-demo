@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Tri-state Checkbox Example</title>
+  <style>
+    /* 可以在这里添加样式 */
+    .indeterminate .check::before {
+      content: '\2212';
+      /* 减号表示不确定状态 */
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+
+  <label>
+    <span class="check"></span> Tri-state Checkbox
+    <input type="checkbox" id="tristate-checkbox" class="tristate-checkbox"> <br>
+    <input type="checkbox" class="tristate-checkbox-child"><br>
+    <input type="checkbox" class="tristate-checkbox-child"><br>
+    <input type="checkbox" class="tristate-checkbox-child"><br>
+    <input type="checkbox" class="tristate-checkbox-child">
+  </label>
+
+  <script>
+    const allcheckbox = document.getElementById('tristate-checkbox');
+
+    allcheckbox.addEventListener('change', function (e) {
+      for (let i = 0; i < childCheckboxes.length; i++) {
+        const checkbox = childCheckboxes[i]
+        checkbox.checked = e.target.checked
+      }
+    });
+
+    const childCheckboxes = document.querySelectorAll('.tristate-checkbox-child');
+    // 模拟子复选框的选择，更新三态复选框的状态
+    function updateTriStateCheckbox() {
+      let checkedCount = 0;
+
+      for (let i = 0; i < childCheckboxes.length; i++) {
+        const checkbox = childCheckboxes[i]
+        if (checkbox.checked) checkedCount++;
+      }
+
+      if (checkedCount === childCheckboxes.length) {
+        allcheckbox.checked = true;
+        allcheckbox.indeterminate = false;
+      } else if (checkedCount === 0) {
+        allcheckbox.checked = false;
+        allcheckbox.indeterminate = false;
+      } else {
+        allcheckbox.indeterminate = true;
+      }
+    }
+
+    // 监听子复选框的变化
+    //  NodeList 不是一个真正的数组，所以它没有数组的 forEach 方法，但你可以使用 for 循环来遍历它。
+    // indeterminate 是重点
+    for (let i = 0; i < childCheckboxes.length; i++) {
+      const checkbox = childCheckboxes[i]
+      checkbox.addEventListener('change', updateTriStateCheckbox);
+    }
+  </script>
+
+</body>
+
+</html>

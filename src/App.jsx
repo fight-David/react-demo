@@ -4,7 +4,7 @@ import TabTest from "./components/custom-tabs/tab-text";
 import FeatureFlags from "./components/feature-flag";
 import FeatureFlagGlobalState from "./components/feature-flag/context";
 import GithubProfileFinder from "./components/github-profile-finder";
-import ImageSlider from "./components/image-slider/self";
+import ImageSlider from "./components/image-slider";
 import LightDarkMode from "./components/light-dark-mode";
 import LoadMoreData from "./components/load-more-data/self";
 import QRCodeGenerator from "./components/qr-code-generator";
@@ -21,6 +21,7 @@ import UseWindowResizeTest from "./components/use-window-resize/test";
 import ScrollToTopAndBottom from "./components/scroll-to-top-and-bottom";
 import ScrollToSection from "./components/scroll-to-top-and-bottom/scroll-to-section";
 import VisualScrolling from "./components/visual-scrolling/self";
+import DataTablePaginated from "./components/paginated";
 
 export default function TaskApp() {
   return (
@@ -71,6 +72,8 @@ export default function TaskApp() {
 
     // <ScrollToSection />
 
-    <VisualScrolling />
+    // <VisualScrolling />
+
+    <DataTablePaginated />
   )
 }

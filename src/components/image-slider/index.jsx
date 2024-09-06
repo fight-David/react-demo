@@ -37,6 +37,15 @@ export default function ImageSlider({ url, limit = 5, page = 1 }) {
         if (url !== "") fetchImages(url);
     }, [url]);
 
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            handleNext()
+        }, 3000);
+        return () => {
+            clearTimeout(timer)
+        }
+    }, [currentSlide])
+
     console.dir(images);
 
     if (loading) {
