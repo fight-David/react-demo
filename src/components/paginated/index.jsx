@@ -25,7 +25,6 @@ export default function DataTablePaginated() {
 
     const [page, setPage] = useState(1)
     const [pageSize, setPageSize] = useState(5)
-
     const { pageUsers, totalPages } = useMemo(() => paginateUsers(users, page, pageSize), [users, page, pageSize])
 
     return (

@@ -1,0 +1,29 @@
+.simple-autocomplete {
+    position: relative;
+    width: 200px;
+}
+
+.simple-autocomplete input {
+    width: 100%;
+    padding: 8px;
+}
+
+.options-list {
+    position: absolute;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: 1px solid #ddd;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.options-list li {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.options-list li:hover {
+    background-color: #f0f0f0;
+}
